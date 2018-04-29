@@ -1,0 +1,8 @@
+<?php
+
+function getCurrencyRates(){
+	$strUrl ='http://data.fixer.io/api/'.$dtBdate.'?access_key=889dd0425c7affd92eddf3dd97be0bac&symbols=INR';
+	    	$json = json_decode(file_get_contents($strUrl));
+	    	$rates =$json->rates->INR;
+	    	$objBdate->rate=number_format((float)$rates, 2, '.', '');
+}
